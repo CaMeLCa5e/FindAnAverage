@@ -11,33 +11,38 @@ def read_file(file_name):
 		num = f.readline().split('|')[-1] 
 		print num
 
-		# def f():
-		# 	i += 0 
-		# 	while True if f() > 0	
-		# 		yield 
 
 
-# new code...  
-		with open(data, 'r') as f:
+# # new code...  ??
+# 		with open(data, 'r') as f:
 
-			total = 0
+# 			total = 0
 
-			for i, line in enumerate(f.readlines()[2:]):
-				if i in line >= 0:
-					yield average.(total)
-				else:
-					return 
+# 			for i, line in enumerate(f.readlines()[2:]):
+# 				if i in line >= 0:
+# 					yield average.(total)
+# 				else:
+# 					return 
 
 
 
+def consume():
+	with open(data, 'r') as f:
+	#display a running average 
+	running_sum = 0
+	data_items_seen = 0
 
-#generator 
-
-		#
-
+	while True:
+		for i line in enumerate(f.readlines()[2:]):
+			if i in line >=0:
+		yield = data
+		data_items_seen += len(data)
+		running_sum += sum(data)
+		print ('The average is {}'.format(running_sum / float(data_items_seen)))
 	#data = f.read()
 	f.close()
 	#return data
+
 
 
 def split_data(x):
