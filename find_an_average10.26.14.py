@@ -3,10 +3,13 @@
 This is an application built to import a data file, average and return a specific value.
 """
 import csv
+from sys import argv
+
+script, filename = argv
 
 def process():
-	with open('data.txt', 'r') as f:
-		
+	with open(filename, 'r') as f:
+
 		#skip the first two lines
 		f.readline()			
 		f.readline()
