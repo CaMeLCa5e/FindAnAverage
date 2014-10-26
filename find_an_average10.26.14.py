@@ -5,7 +5,6 @@ This is an application built to import a data file, average and return a specifi
 import csv
 from sys import argv
 
-script, filename = argv
 
 def process():
 	with open(filename, 'r') as f:
@@ -32,10 +31,13 @@ def process():
 
 	return sum(column)
 
-def main():
-	print process()
 
-if __name__ == '__main__':
-	main()
-	
+if __name__ == '__main__': 
+	del argv[0]
+	if not argv:
+		print("Error: need filename arg")
+	else:
+		filename = argv[0]
+		print process()
+
 
