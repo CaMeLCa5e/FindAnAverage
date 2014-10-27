@@ -1,13 +1,17 @@
 #!/usr/bin/env python 
 """
-This is an application built to import a data file, average and return a specific value.
+This is an application built to import a data file, 
+average and return a specific value.
 """
 import csv
 from sys import argv
 
 
-def process():
-	with open(filename, 'r') as f:
+def process(filename):
+	"""Returns the average value from the last column of filename"""
+	with open(filename, 'r', 1) as f:
+		total = 0.0
+		number_of_lines = 0
 
 		#skip the first two lines
 		f.readline()			
@@ -27,10 +31,10 @@ def process():
 			
 			else:
 				if data != -999999999:
-					column.append(data)
+					total += data
+					number_of_lines+= 1
 
-	return sum(column)
-
+	return total/number_of_lines
 
 if __name__ == '__main__': 
 	del argv[0]
@@ -38,6 +42,6 @@ if __name__ == '__main__':
 		print("Error: need filename arg")
 	else:
 		filename = argv[0]
-		print process()
+		print process(filename)
 
 
